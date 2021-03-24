@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ===MAIN CSS== -->
+    <link rel="stylesheet" href="dist/css/main.css" />
+
+    <title>Ninime, nonton anime sub indo terbaru</title>
+  </head>
+  <body>
+    <!-- ===NAVBAR=== -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          >Ni<span>nime</span>
+          <p class="text">Nonton anime subtitle Indonesia</p>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" id="home" href="#">Home</a>
+            <a class="nav-item nav-link" href="#">Features</a>
+          </div>
+        </div>
+        <form class="form-inline d-flex-justify-content-end">
+          <input
+            class="form-control mr-sm-2 search__anime"
+            type="search"
+            placeholder="Search anime..."
+            aria-label="Search"
+          />
+        </form>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- ===END OF NAVBAR=== -->
+
+    <!-- ===ANIME WINTER -->
+    <section id="anime__winter"></section>
+    <!-- ===END OF ANIME WINTER -->
+
+    <!-- <div class="container container-detail">
+      <div class="judul__anime text-center">
+        <h1>${result.title}</h1>
+      </div>
+      <div class="sub__judul__anime text-center">
+        <h2>Streaming ${result.title}</h2>
+      </div>
+      <div id="detail__anime">
+        <img
+          sizes="(max-width: 255px), 255px"
+          width="225"
+          height="318"
+          src="${result.thumb}"
+          alt="${result.title}"
+        />
+        <div class="info__anime">
+          <div class="info__anime__detail">
+            <p>
+              <span>
+                <b class="float-left">Judul : </b>
+                ${result.title}, ${result.japanase}
+              </span>
+            </p>
+            <p>
+              <span>
+                <b class="float-left">Durasi : </b>
+                ${result.duration} per eps
+              </span>
+            </p>
+            <p>
+              <span>
+                <b class="float-left">Status : </b>
+                ${result.status}
+              </span>
+            </p>
+            <p>
+              <span>
+                <b class="float-left">Episode : </b>
+                ${result.total_episode}
+              </span>
+            </p>
+            <p>
+              <span>
+                <b class="float-left">Rating : </b>
+                ${result.score}
+              </span>
+            </p>
+            <p>
+              <span>
+                <b class="float-left">Studio : </b>
+                ${result.studio}
+              </span>
+            </p>
+            <p>
+              <span>
+                <b class="float-left">Tipe : </b>
+                ${result.type}
+              </span>
+            </p>
+            <p>
+              <span>
+                <b class="float-left">Genre : </b>
+                ${genre}
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="sinopsis">
+          <p>${result.synopsis}</p>
+        </div>
+        <br />
+        <div class="download">
+          <div class="batch-list"> 
+            <h4>INI BATCH PERTAMA</h4>
+            <ul>
+              <li class="text-center reso_anime">
+                <strong class="float-left">360mp4</strong>
+                <a href="#">Otakudrive</a>
+                <a href="#">Otakudrive</a>
+                <a href="#">Otakudrive</a>
+                <a href="#">Otakudrive</a>
+                <i>8gb</i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="listEps">
+          <div class="batch">
+            <span class="text-batch float-left"
+              >Download ${result.title} Batch</span
+            >
+          </div>
+          <ul>
+            <li>
+              <span>
+                <a
+                  href="#"
+                  onclick="batch(this)"
+                  data-id="${result.batch_link.id}"
+                  >${result.title} Batch</a
+                >
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="listEps">
+          <div class="eps" data-id="eps">
+            <span class="text-eps float-left">List Eps ${result.title}</span>
+          </div>
+          <ul id="listEps"></ul>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="dist/js/main.js"></script>
+  </body>
+</html>
