@@ -339,7 +339,7 @@ function stream(el) {
       let medQual = downloadlist.medium_quality;
       let highQual = downloadlist.high_quality;
       let qual = [lowQual, medQual, highQual];
-      $("#anime__winter").html(CardStream(eps));
+      $("#anime__winter").html(CardStream(eps, qual));
       $(".video").append(`<div class="subhead">
                             <h2>Download ${eps.title}</h2>
                           </div>
@@ -351,13 +351,23 @@ function stream(el) {
                             </ul>
                           </div>`);
       qual.forEach((quals) => {
-        $(".linkeps").append(`<li class="epsdown">
+        $(".responsive-embed").html(`<iframe
+                                        id="vid"
+                                        src="${quals.download_links[3].link}"
+                                        frameborder="0"
+                                        width="420"
+                                        height="370"
+                                        allowfullscreen="true"
+                                        webkitallowfullscreen="true"
+                                        mozzallowfullscreen="true"
+                                      ></iframe>`);
+        $(".linkeps").append(`<li class="links">
                                 <strong class="float-left">${quals.quality}</strong>
-
+                                  
                                 <i class="float-right">${quals.size}</i>
                               </li>`);
         quals.download_links.forEach((link) => {
-          $(".epsdown").append(
+          $(".links").append(
             `<a href="${link.link}" target="_blank">${link.host}</a>`
           );
         });
@@ -367,7 +377,8 @@ function stream(el) {
 }
 
 function CardStream(eps) {
-  return `<div class="stream">
+  return `<div class="container">
+            <div class="stream">
             <div class="konten">
               <div class="menu-utama">
                 <h1 class="judul">${eps.title}</h1>
@@ -380,21 +391,14 @@ function CardStream(eps) {
                   <div class="embedvid">
                     <div class="play-embed">
                       <div class="responsive-embed">
-                        <iframe
-                          src="${eps.link_stream}"
-                          frameborder="0"
-                          width="420"
-                          height="370"
-                          allowfullscreen="true"
-                          webkitallowfullscreen="true"
-                          mozzallowfullscreen="true"
-                        ></iframe>
+                        
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
           </div>`;
 }
 
