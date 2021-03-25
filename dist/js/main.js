@@ -254,7 +254,6 @@ function CardDetail(result, eps, genre) {
                 </p>
             </div>
             <br/>
-            <div class="batch-list"></div>
             <div class="listEps">
               <div class="batch">
                 <span class="text-batch float-left"
@@ -294,51 +293,109 @@ function batch(el) {
       let medQual = downloadlist.medium_quality;
       let highQual = downloadlist.high_quality;
       let qual = [lowQual, medQual, highQual];
-      $("#detail__anime").append(BatchList(batchlist, qual));
-      let quals = [];
-      for (i = 0; i < qual.length; i++) {
-        let val = qual[i];
-        quals.push(val);
-        $("#batch__anime").append(ListQual(val));
-        let links = val.download_links;
-        link = "";
-        links.forEach((links) => {
-          let link = links;
-          $(".listLink").append(linkBatch(link));
+      $("#detail__anime").append(`<div class="download">
+                                    <div class="batch-list"> 
+                                    
+                                    </div>
+                                  </div>`);
+      $(".batch-list").append(`<h4>${batchlist.title}</h4>
+                                <ul id="infobatch">
+                                  
+                                </ul>`);
+      qual.forEach((quals) => {
+        $("#infobatch").append(`<li class="text-center">
+                                  <strong class="float-left">${quals.quality}</strong>
+                                  <i class="float-right">${quals.size}</i>
+                                    <div class="link"></div>
+                                </li>`);
+        quals.download_links.forEach((link) => {
+          $(".link").append(
+            `<a href="${link.link}" target="_blank">${link.host}</a>`
+          );
         });
-      }
+      });
     },
   });
 }
 
-function BatchList(batchlist) {
-  return `<div class="download">
-            <div class="batch-list">
-              <h4>${batchlist.title}</h4>
-              <ul id="batch__anime">
-              </ul>
-            </div>
-          </div>`;
-}
-function ListQual(val) {
-  return `
-            <li>
-              <strong class="link__batch">${val.quality}</strong>
-              <i class="float-right">${val.size}</i>
-                  <div class="listLink"></div>
-            </li>
-          `;
-}
-function linkBatch(link) {
-  return `<a href="${link.link}">${link.host}</a>`;
-}
 function Listeps(epslist) {
   return `<li>
             <span>
-              <a href="#">${epslist.title}</a>
+              <a href="#" onclick="stream(this)" data-id="${epslist.id}">${epslist.title}</a>
             </span>
             <span class="float-right">${epslist.uploaded_on}</span>
           </li>`;
+}
+
+function stream(el) {
+  let id = $(el).data("id");
+  let epsid = id.slice(22);
+  $.ajax({
+    url: `https://anime.kaedenoki.net/api/eps/${epsid}`,
+    success: (eps) => {
+      const epslist = eps;
+      let downloadlist = epslist.quality;
+      let lowQual = downloadlist.low_quality;
+      let medQual = downloadlist.medium_quality;
+      let highQual = downloadlist.high_quality;
+      let qual = [lowQual, medQual, highQual];
+      $("#anime__winter").html(CardStream(eps));
+      $(".video").append(`<div class="subhead">
+                            <h2>Download ${eps.title}</h2>
+                          </div>
+                          <div class="download">
+                            <h4>Link download ${eps.title}</h4>
+                            <h4>(NOTE: KALAU GA ADA VIDEO YANG MUNCUL, BISA STREAM LEWAT LINK DIBAWAH)</h4>
+                            <ul class="linkeps">
+                              
+                            </ul>
+                          </div>`);
+      qual.forEach((quals) => {
+        $(".linkeps").append(`<li class="epsdown">
+                                <strong class="float-left">${quals.quality}</strong>
+
+                                <i class="float-right">${quals.size}</i>
+                              </li>`);
+        quals.download_links.forEach((link) => {
+          $(".epsdown").append(
+            `<a href="${link.link}" target="_blank">${link.host}</a>`
+          );
+        });
+      });
+    },
+  });
+}
+
+function CardStream(eps) {
+  return `<div class="stream">
+            <div class="konten">
+              <div class="menu-utama">
+                <h1 class="judul">${eps.title}</h1>
+                <div class="prevnext">
+                  <div class="float-left"></div>
+                  <div class="float-right nextprev">
+                  </div>
+                </div>
+                <div class="video">
+                  <div class="embedvid">
+                    <div class="play-embed">
+                      <div class="responsive-embed">
+                        <iframe
+                          src="${eps.link_stream}"
+                          frameborder="0"
+                          width="420"
+                          height="370"
+                          allowfullscreen="true"
+                          webkitallowfullscreen="true"
+                          mozzallowfullscreen="true"
+                        ></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`;
 }
 
 $("#home").on("click", () => {

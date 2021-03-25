@@ -285,3 +285,77 @@ body {
   color: #fff;
   background: #5a5856;
 }
+/* ===END OF BATCH LIST STYLE=== */
+
+/* ===STYLE STREAM=== */
+.stream {
+  overflow: hidden;
+  width: 800px;
+  margin: 0px auto;
+  background: #171616;
+  padding: 10px;
+}
+.konten {
+  overflow: hidden;
+  width: 100%;
+  float: left;
+}
+.menu-utama {
+  overflow: hidden;
+}
+.judul {
+  font-size: 15px;
+  padding: 7px 0;
+  margin-bottom: 7px;
+  border-bottom: 1px solid #ddd;
+  color: #ffffff;
+}
+.prevnext {
+  margin: 6px 0;
+  overflow: hidden;
+}
+.nextprev {
+  margin: 7px 0px;
+}
+.nextprev a {
+  border: 2px solid #0065ad;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+.video {
+  position: relative;
+  z-index: 102;
+}
+.embedvid {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.play-embed {
+  margin: auto;
+}
+.responsive-embed {
+  position: relative;
+  padding-bottom: 51%;
+  padding-top: 44px;
+  height: 0;
+  overflow: hidden;
+}
+.responsive-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  right: 1px;
+}
+.subhead h2 {
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 3px;
+  text-align: center;
+  background: #bfbfbf;
+  margin-bottom: 5px;
+  color: #171616;
+}
