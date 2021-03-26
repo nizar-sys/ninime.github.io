@@ -13,9 +13,7 @@ function homePage() {
           cardWinter += CardWinter(anime_ongoing);
         });
         $("#anime__winter").append(`<div class="container anime__winter">
-                                      <div class="row">
-                                        <h3 class="anime__header">New release</h3>
-                                      </div>
+                                      <h3 class="anime__header">New release</h3>
                                       <div class="row card__winter">
                                       
                                       </div>
@@ -46,24 +44,24 @@ function homePage() {
 homePage();
 
 function CardWinter(anime_ongoing) {
-  return `<div class="col">
-            <div class="container">
-            <a href="#" onclick="detail(this)"  data-id="${anime_ongoing.id}" class="card detail__anime">
-              <div class="status">${anime_ongoing.episode}</div>
-              <div class="rating">${anime_ongoing.day_updated}</div>
-              <div class="thumb">
-                <img
-                  width="170"
-                  height="169"
-                  sizes="(max-width: 300px), 100vw"
-                  src="${anime_ongoing.thumb}"
-                  alt="${anime_ongoing.title}"
-                />
-                <h2 class="judul">${anime_ongoing.title}</h2>
-              </div>
-            </a>
+  return `
+            <div class="col">
+              <a href="#" onclick="detail(this)"  data-id="${anime_ongoing.id}" class="card detail__anime">
+                <div class="status">${anime_ongoing.episode}</div>
+                <div class="rating">${anime_ongoing.day_updated}</div>
+                <div class="thumb">
+                  <img
+                    width="170"
+                    height="169"
+                    sizes="(max-width: 300px), 100vw"
+                    src="${anime_ongoing.thumb}"
+                    alt="${anime_ongoing.title}"
+                  />
+                  <h2 class="judul">${anime_ongoing.title}</h2>
+                </div>
+              </a>
             </div>
-          </div>`;
+          `;
 }
 function CardNewEps(complete) {
   return `<div class="col">
@@ -98,7 +96,7 @@ $(".search__anime").on("click", () => {
           if (!searchAnime) {
             $("#anime__winter").html(`<div class="container anime__winter">
                                         <div class="row">
-                                          <h3 class="anime__header">Tidak pencarian : ${query} dalam bentuk apapun</h3>
+                                          <h3 class="anime__header">Tidak ada pencarian : ${query} dalam bentuk apapun</h3>
                                         </div>
                                         <div class="row card__search">
                                         
