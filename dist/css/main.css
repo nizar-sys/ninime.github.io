@@ -22,6 +22,17 @@ body {
 }
 /* ===NAVBAR END=== */
 
+/* ===COL=== */
+.col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 49%;
+}
+/* ===COL=== */
+
 /* ===ANIME__WINTER HEADER=== */
 #anime__winter {
   margin-top: 11rem;

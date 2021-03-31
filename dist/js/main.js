@@ -343,7 +343,7 @@ function stream(el) {
                           </div>
                           <div class="download">
                             <h4>Link download ${eps.title}</h4>
-                            <h4>(NOTE: KALAU GA ADA VIDEO YANG MUNCUL, BISA STREAM LEWAT LINK DIBAWAH)</h4>
+                            <h4>NOTE: KALAU GA ADA VIDEO YANG MUNCUL, BISA STREAM LEWAT LINK DIBAWAH</h4>
                             <ul class="linkeps">
                               
                             </ul>
